@@ -7,6 +7,6 @@
  const ApiRouter = require('express').Router();
 
  // Insert route handlers here
- MainRouter.use('/games', require('./games'));
+ ApiRouter.use('/games', require('./games'));
 
- module.exports = MainRouter;
+ module.exports = ApiRouter;

@@ -1,23 +1,18 @@
 /**
  * /routes/api/games/index.js
  */
+const express = require('express');
+const GameRouter = express.Router();
 
-const GameRouter = require('express').Router();
+//const start = require('./start.js');
+//onst show_game = require('./show_game.js');
+const join = require('./addSecondPlayer.js');
+const id = require('./addFirstPlayer.js');
 
-const start = require('start.js');
-const id = require('id.js');
-const show_game = require('show_game.js');
-const join = require('join.js');
-
-GameRouter.route('/')
-    .post(start);
-GameRouter.route('/id')
-    .get(id);
-GameRouter.route('/:id')
-    .get(show_game);
-GameRouter.route('/:id/join')
-    .get(join);
-GameRouter.route('/:id/move')
-    .post(move);
+//GameRouter.route('/').post(start);
+GameRouter.route('/').post(id);
+//GameRouter.route('/:id').get(show_game);
+GameRouter.route('/:id/join').post(join);
+//GameRouter.route('/:id/move').post(move);
 
 module.exports = GameRouter;
