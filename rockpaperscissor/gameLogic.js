@@ -13,11 +13,11 @@ function gameLogic(game) {
     moveLogic(secondMove);
 
     if (firstMove.win === secondMove.type) {
-        return "Player " + game.playerOne + " wins!"
+        return 1; // Player One wins
     } else if (firstMove.lose === secondMove.type) {
-        return "Player " + game.playerTwo + " wins!"
+        return 2; // Player Two wins
     } else {
-        return "It's a draw!"
+        return 3; // Draw
     }
 }
 module.exports = gameLogic;

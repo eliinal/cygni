@@ -5,4 +5,5 @@ function Move(type, win, lose) {
     this.win = win;
     this.lose = lose;
 }   
+
 module.exports = Move;

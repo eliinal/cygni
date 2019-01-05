@@ -9,13 +9,14 @@ function addSecondPlayer(req, res) {
     
     if (gId === game.id) {
         game.playerTwo = name
+        console.log('Id: ' + game.id + ' Player One: ' + game.playerOne + ' Player Two: ' + game.playerTwo);
+        return res.send(game.id + game.playerOne + game.playerTwo);
     }
-    const secondUser = {
-        gId: gId,
-        name: name
+    else {
+        msg = "No game exists with that id";
+        return res.send(msg);
     }
-    console.log("Player " + name + " joined the game.");
-    return res.send(game);
+    
 }
 
 module.exports = addSecondPlayer;

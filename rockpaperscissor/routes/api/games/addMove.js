@@ -7,15 +7,18 @@ const game = require('../../../modules/game');
 
 function addMove(req, res) {
     var userName = req.body.name;
-    var userMove = req.body.move;
-    if (userName === game.playerOne) {
-        game.playerOneMove = userMove;
-    } else if (userName === game.playerTwo) {
-        game.playerTwoMove = userMove;
-    }
-
-    console.log("Player " + userName + " played " + userMove)
-    return res.send(game);
+    var userMove = String(req.body.move).toLowerCase;
+    if (userMove.includes('rock', 'paper', 'scissor')) {
+        if (userName === game.playerOne) {
+            game.playerOneMove = userMove;
+            return res.send(game.playerOne + game.playerOneMove);
+        } else if (userName === game.playerTwo) {
+            game.playerTwoMove = userMove;
+            return res.send(game.playerTwo + game.playerTwoMove);
+        }
+    } else {
+        return "Incorrect move.";
+    }  
 }
 
 module.exports = addMove;

@@ -1,28 +1,29 @@
 var express = require('express');
 
-//const game = require('./modules/game');
-//const move = require('./modules/move');
-
 // logic for which player wins, e.g. scissor beats paper etc.
 
 function moveLogic(move) {
     // paper beats rock, scissor beats paper, rock beats scissor
-    switch(move.type) {
+    switch(String(move.type).toLowerCase()) {
         case 'rock':
-            move.win = 'scissor'
-            move.lose = 'paper'
+            move.type = 'rock';
+            move.win = 'scissor';
+            move.lose = 'paper';
             break;
         case 'paper':
-            move.win = 'rock'
-            move.lose = 'scissor'
+            move.type = 'paper';
+            move.win = 'rock';
+            move.lose = 'scissor';
             break;
         case 'scissor':
-            move.win = 'paper'
-            move.lose = 'rock'
+            move.type = 'scissor';
+            move.win = 'paper';
+            move.lose = 'rock';
             break;
         default:
-            move.win = ''
-            move.lose = ''        
+            move.type = '';
+            move.win = '';
+            move.lose = '';        
     }
 }
 

@@ -12,8 +12,8 @@ function addUser(req, res) {
     const name = req.body.name;
     game.id = uniqid();
     game.playerOne = name;
-    console.log("Player " + name + " started a game");
-    return res.send(game);
+    console.log('Id: ' + game.id + ' Player One: ' + game.playerOne);
+    return res.send(game.id + '' + game.playerOne);
 }
 
 module.exports = addUser;
