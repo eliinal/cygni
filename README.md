@@ -10,8 +10,8 @@ Start the game. Go to POST http://localhost:5012/api/games/ to write the first P
 
 Submit the first player's name in the request-body like this:
 
-{
-    "name": "Lisa"
+{  
+    "name": "Lisa"  
 }
 
 The header section in Postman now displays the game id and the first players name.
@@ -23,8 +23,8 @@ Use this id and go to
 POST http://localhost:5012/api/games/:id/join
 to submit the second player's name in the request body.
 
-{
-    "name": "Pelle"
+{  
+    "name": "Pelle"  
 }
 
 Now the Postman header section will display the game id, the first player's name as well as the second player's name.
@@ -32,7 +32,7 @@ Now the Postman header section will display the game id, the first player's name
 ## Step 3 & 4
 The players make their moves, by going to POST http://localhost:5012/api/games/:id/move and sumbit their name and the chosen move in the request-body.
 
-{
+{  
     "name": "Lisa/Pelle"  
     "move": "rock/paper/scissor"  
 }
