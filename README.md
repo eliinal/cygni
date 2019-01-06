@@ -1,4 +1,4 @@
-# Rock paper scissor
+# Rock paper scissors
 This application uses Node.js and Express.
 
 To start the game, place yourself in the folder "rockpaperscissor" and write "npm start" to start.
