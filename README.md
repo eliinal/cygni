@@ -6,7 +6,7 @@ To start the game, place yourself in the folder "rockpaperscissor" and write "np
 The instructions are provided to test the application with Postman.
 
 ## Start the game
-Enter POST http://localhost:5012/api/games/ in POSTMAN to send the first POST-request.
+Enter POST http://localhost:5012/api/games/ in Postman to send the first POST-request.
 
 Submit the first player's name in the request-body like this, by choosing the settings "raw" and "JSON (applciation/json)":
 
@@ -37,12 +37,16 @@ The player make their move by entering POST http://localhost:5012/api/games/:id/
     "move": "rock/paper/scissor"  
 }
 
-The move category is not case-sensitive. The player's name and the chosen move is displayed in the Postman header section. If the chosen move does not exist, the application will answer correspondingly.
+The move category is not case-sensitive. The player's name and the chosen move is displayed in the Postman header section. If the chosen move does not exist, the application will answer accordingly.
 
 ## Check state
-After both players has placed their moves, anyone of them can check the state of the game by entering GET http://localhost:5012/api/games/:id.
+After both players have placed their moves, anyone of them can check the state of the game by entering GET http://localhost:5012/api/games/:id. Additionally, they need to enter their name in the request-body so the correct attributes are shown. Same settings as previous request.
+
+{  
+    "name": "Lisa/Pelle  
+}
 
 The server will then answer if the first player or the second player won or if the game was a draw.
 
-Additionally, it is also possible to check the state at any other time and the application will answer correspondingly.
+Additionally, it is also possible to check the state at any other time and the application will answer accordingly.
  
