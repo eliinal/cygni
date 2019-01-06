@@ -7,16 +7,16 @@ function moveLogic(move) {
     switch(String(move.type).toLowerCase()) {
         case 'rock':
             move.type = 'rock';
-            move.win = 'scissor';
+            move.win = 'scissors';
             move.lose = 'paper';
             break;
         case 'paper':
             move.type = 'paper';
             move.win = 'rock';
-            move.lose = 'scissor';
+            move.lose = 'scissors';
             break;
-        case 'scissor':
-            move.type = 'scissor';
+        case 'scissors':
+            move.type = 'scissors';
             move.win = 'paper';
             move.lose = 'rock';
             break;

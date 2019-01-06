@@ -9,12 +9,10 @@ function addSecondPlayer(req, res) {
     
     if (gId === game.id) {
         game.playerTwo = name
-        console.log('Id: ' + game.id + ' Player One: ' + game.playerOne + ' Player Two: ' + game.playerTwo);
-        return res.send(game.id + game.playerOne + game.playerTwo);
+        return res.send('Id: ' + game.id + '\n' + 'Player One: ' + game.playerOne + '\n' + 'Player Two: ' + game.playerTwo);
     }
     else {
-        msg = "No game exists with that id";
-        return res.send(msg);
+        return res.send("No game exists with that id");
     }
     
 }

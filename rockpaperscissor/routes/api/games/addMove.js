@@ -7,15 +7,15 @@ const game = require('../../../modules/game');
 
 function addMove(req, res) {
     var userName = req.body.name;
-    var userMove = String(req.body.move).toLowerCase;
-    if (userMove.includes('rock', 'paper', 'scissor')) {
+    var userMove = String(req.body.move).toLowerCase();
+    if (userMove.includes('rock') || userMove.includes('paper') || userMove.includes('scissors')) {
         if (userName === game.playerOne) {
             game.playerOneMove = userMove;
-            return res.send(game.playerOne + game.playerOneMove);
+            return res.send("Player One: " + game.playerOne + '\n' + "Move: " + game.playerOneMove + '.');
         } else if (userName === game.playerTwo) {
             game.playerTwoMove = userMove;
-            return res.send(game.playerTwo + game.playerTwoMove);
-        }
+            return res.send("Player Two: " + game.playerTwo + '\n' + "Move: " + game.playerTwoMove + '.');
+       }
     } else {
         return "Incorrect move.";
     }  
