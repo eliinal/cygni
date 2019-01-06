@@ -33,8 +33,8 @@ Now the Postman header section will display the game id, the first player's name
 The players make their moves, by going to POST http://localhost:5012/api/games/:id/move and sumbit their name and the chosen move in the request-body.
 
 {
-    "name": "Lisa/Pelle"
-    "move": "rock/paper/scissor"
+    "name": "Lisa/Pelle"  
+    "move": "rock/paper/scissor"  
 }
 
 The move category is not case-sensitive. The player's name and the chosen move is displayed in the Postman header section. If the chosen move does not exist, the application will answer correspondingly.
