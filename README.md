@@ -5,32 +5,32 @@ To start the game, place yourself in the folder "rockpaperscissor" and write "np
 
 The instructions are provided to test the application with Postman.
 
-## Step 1
-Start the game. Go to POST http://localhost:5012/api/games/ to write the first POST-request.
+## Start the game
+Enter POST http://localhost:5012/api/games/ in POSTMAN to send the first POST-request.
 
-Submit the first player's name in the request-body like this:
+Submit the first player's name in the request-body like this, by choosing the settings "raw" and "JSON (applciation/json)":
 
 {  
     "name": "Lisa"  
 }
 
-The header section in Postman now displays the game id and the first players name.
+The response from the server is now shown in header section in Postman. 
 
-## Step 2
-Ask another person to join the game. It is implied that the other player has received the game id, from the first player, through slack or a similar service. 
+## Join the game
+Ask another person to join the game. It is implied that the other player has received the game id, from the first player, through Slack or a similar service. 
 
-Use this id and go to 
+Use this id and enter 
 POST http://localhost:5012/api/games/:id/join
-to submit the second player's name in the request body.
+to submit the second player's name in the request body, with the same settings as the previous request.
 
 {  
     "name": "Pelle"  
 }
 
-Now the Postman header section will display the game id, the first player's name as well as the second player's name.
+The response from the server is now shown in header section in Postman. 
 
-## Step 3 & 4
-The players make their moves, by going to POST http://localhost:5012/api/games/:id/move and sumbit their name and the chosen move in the request-body.
+## Make a move
+The player make their move by entering POST http://localhost:5012/api/games/:id/move and submitting their name and the chosen move in the request-body. Same settings as previous request.
 
 {  
     "name": "Lisa/Pelle"  
@@ -39,10 +39,10 @@ The players make their moves, by going to POST http://localhost:5012/api/games/:
 
 The move category is not case-sensitive. The player's name and the chosen move is displayed in the Postman header section. If the chosen move does not exist, the application will answer correspondingly.
 
-## Step 5
-After both players has placed their moves, anyone of them can check the state of the game by going to GET http://localhost:5012/api/games/:id.
+## Check state
+After both players has placed their moves, anyone of them can check the state of the game by entering GET http://localhost:5012/api/games/:id.
 
-The application will then answer if the first player or the second player won or if the game was a draw.
+The server will then answer if the first player or the second player won or if the game was a draw.
 
 Additionally, it is also possible to check the state at any other time and the application will answer correspondingly.
  
