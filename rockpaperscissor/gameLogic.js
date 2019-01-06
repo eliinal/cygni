@@ -1,5 +1,3 @@
-var express = require('express');
-
 const Move = require('./modules/move');
 const moveLogic = require('./moveLogic');
 

@@ -1,9 +1,4 @@
-var express = require('express');
-
-// logic for which player wins, e.g. scissor beats paper etc.
-
 function moveLogic(move) {
-    // paper beats rock, scissor beats paper, rock beats scissor
     switch(String(move.type).toLowerCase()) {
         case 'rock':
             move.type = 'rock';

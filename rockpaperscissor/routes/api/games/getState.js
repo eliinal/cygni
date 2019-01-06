@@ -1,5 +1,3 @@
-var express = require('express');
-
 const gameLogic = require('../../../gameLogic');
 const game = require('../../../modules/game');
 
@@ -16,15 +14,17 @@ function getState(req, res) {
     if (name === game.playerOne) {
         if (game.playerTwo === '') {
             return res.send('Player Two has not yet joined the game.');
-        } else if(game.playerTwoMove === '') {
+        } else if (game.playerTwoMove === '') {
             return res.send(game.playerTwo  + 
             ' has not placed their move yet. You played ' + game.playerOneMove + '.');
+        } else if (game.playerOneMove === '') {
+            return res.send('You have not placed your move yet.');
         }
     } else if (name === game.playerTwo) {
-        if(game.playerOneMove === '') {
+        if (game.playerOneMove === '') {
             return res.send(game.playerOne  + 
             ' has not placed their move yet. You played ' + game.playerTwoMove + '.');
-        } else if(game.playerTwoMove === '') {
+        } else if (game.playerTwoMove === '') {
             return res.send("You have not placed your move yet.");
         }
     } else {

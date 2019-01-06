@@ -1,6 +1,3 @@
-var express = require('express');
-var addFirst = require('./addFirstPlayer');
-// add an instance of game here and save second user data
 const game = require('../../../modules/game');
 
 function addSecondPlayer(req, res) {

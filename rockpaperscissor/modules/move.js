@@ -1,5 +1,3 @@
-var express = require('express');
-
 function Move(type, win, lose) {
     this.type = type;
     this.win = win;

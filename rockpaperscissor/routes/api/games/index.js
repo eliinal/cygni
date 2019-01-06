@@ -1,5 +1,7 @@
 /**
  * /routes/api/games/index.js
+ * @description: Index file for the games sub-application. 
+ * All routes with "/games" comes through here. 
  */
 const express = require('express');
 const GameRouter = express.Router();
